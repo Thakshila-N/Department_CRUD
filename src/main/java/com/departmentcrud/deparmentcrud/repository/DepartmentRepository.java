@@ -7,5 +7,7 @@ import com.departmentcrud.deparmentcrud.entity.Department;
 
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long>{
+	
+	public Department findDepartmentByDepName(String name);
 
 }
