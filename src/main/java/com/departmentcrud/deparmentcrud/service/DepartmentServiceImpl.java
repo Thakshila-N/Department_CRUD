@@ -1,5 +1,7 @@
 package com.departmentcrud.deparmentcrud.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,25 @@ public class DepartmentServiceImpl implements DepartmentService {
 		System.out.println("Saving department: " + dep);
 		return depRepo.save(dep);
 	}
+
+	@Override
+	public List<Department> fetchDep() {
+		
+		return depRepo.findAll();
+	}
+
+	@Override
+	public Department fetchDataById(Long depId) {
+		
+		return depRepo.findById(depId).get();
+	}
+
+	@Override
+	public Department fetchDataByName(String name) {
+		return depRepo.findDepartmentByDepName(name);
+	}
+	
+	
 	
 	
 	
